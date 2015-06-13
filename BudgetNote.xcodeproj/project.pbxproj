@@ -16,6 +16,8 @@
 		26B39ADE1B2C04B10038E061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B39ADC1B2C04B10038E061 /* LaunchScreen.storyboard */; };
 		26B39AE91B2C04B10038E061 /* BudgetNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B39AE81B2C04B10038E061 /* BudgetNoteTests.swift */; };
 		26B39AF41B2C04B10038E061 /* BudgetNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B39AF31B2C04B10038E061 /* BudgetNoteUITests.swift */; };
+		26B39B021B2C07630038E061 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B39B011B2C07630038E061 /* Item.swift */; };
+		26B39B041B2C07BF0038E061 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B39B031B2C07BF0038E061 /* ItemTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		26B39AEF1B2C04B10038E061 /* BudgetNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B39AF31B2C04B10038E061 /* BudgetNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetNoteUITests.swift; sourceTree = "<group>"; };
 		26B39AF51B2C04B10038E061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26B39B011B2C07630038E061 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		26B39B031B2C07BF0038E061 /* ItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				26B39ADC1B2C04B10038E061 /* LaunchScreen.storyboard */,
 				26B39ADF1B2C04B10038E061 /* Info.plist */,
 				26B39AD01B2C04B10038E061 /* BudgetNote.xcdatamodeld */,
+				26B39B011B2C07630038E061 /* Item.swift */,
 			);
 			path = BudgetNote;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				26B39AE81B2C04B10038E061 /* BudgetNoteTests.swift */,
 				26B39AEA1B2C04B10038E061 /* Info.plist */,
+				26B39B031B2C07BF0038E061 /* ItemTests.swift */,
 			);
 			path = BudgetNoteTests;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B39B021B2C07630038E061 /* Item.swift in Sources */,
 				26B39AD21B2C04B10038E061 /* BudgetNote.xcdatamodeld in Sources */,
 				26B39ACF1B2C04B10038E061 /* AppDelegate.swift in Sources */,
 				26B39AD41B2C04B10038E061 /* MasterViewController.swift in Sources */,
@@ -272,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B39B041B2C07BF0038E061 /* ItemTests.swift in Sources */,
 				26B39AE91B2C04B10038E061 /* BudgetNoteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
