@@ -26,14 +26,14 @@ class ItemTests: XCTestCase {
         return managedObjectContext
     }
     
-    func testItemExist() {
+    func testExist() {
         let managedObjectContext = setUpInMemoryManagedObjectContext()
         let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedObjectContext)
         let item = Item(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
         XCTAssertNotNil(item)
     }
     
-    func testItemAttributes() {
+    func testAttributes() {
         let managedObjectContext = setUpInMemoryManagedObjectContext()
         let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedObjectContext)
         let item = Item(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
@@ -46,4 +46,28 @@ class ItemTests: XCTestCase {
         XCTAssertEqual(item.valueForKey("timeStamp") as! NSDate, date)
     }
     
+    func testSetAttributes() {
+        let managedObjectContext = setUpInMemoryManagedObjectContext()
+        let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedObjectContext)
+        let item = Item(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+        item.setAttributes(["name": "BEER", "location": "Drug Store", "income": 0, "outgo": 1501])
+        XCTAssertEqual(item.valueForKey("name") as! String, "BEER")
+        XCTAssertEqual(item.valueForKey("location") as! String, "Drug Store")
+        XCTAssertEqual(item.valueForKey("income") as! Int, 0)
+        XCTAssertEqual(item.valueForKey("outgo") as! Int, 1501)
+        XCTAssertNotNil(item.valueForKey("timeStamp"))
+    }
+    func testAll() {
+        let managedObjectContext = setUpInMemoryManagedObjectContext()
+        let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedObjectContext)
+        let item = Item(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+        item.setAttributes(["name": "BEER", "location": "Drug Store", "income": 0, "outgo": 1501])
+        do {
+            try managedObjectContext.save()
+        } catch {
+            
+        }
+        let items = Item.all(managedObjectContext)
+        XCTAssertNil(items)
+    }
 }

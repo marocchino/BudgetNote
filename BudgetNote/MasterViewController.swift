@@ -41,11 +41,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func insertNewObject(sender: AnyObject) {
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context)
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as! Item
              
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
+        newManagedObject.setAttributes(["name": "test"])
              
         // Save the context.
         do {
